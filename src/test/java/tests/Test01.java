@@ -7,68 +7,66 @@ import org.hamcrest.Matcher;
 import org.testng.annotations.Test;
 import pojos.UpdateUserPojo;
 import pojos.UserPojo;
-import testBase.RoofBase;
+import testBase.TestBaseReport;
 import utils.Utils;
 import java.util.HashMap;
 import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
-public class Test01 extends RoofBase {
+public class Test01 extends TestBaseReport {
 
     @Test
-    public void getUserList(){
-        //Tüm kullanıcılar sorgulanır.
+    public void getUserList(){ extentTest=extentReports.createTest("(GET) Kullanıcı listesi");
 
-        Response response = given().accept("application/json").when().get(baseUrl+"/users");
+        Response response = given().accept("application/json").spec(spec01).when().get();
         Utils.checkStatus(response);
-        response.prettyPrint();
+        Utils.report(response);
     }
     @Test
-    public void getUserWithId(){
+    public void getUserWithId(){ extentTest=extentReports.createTest("(GET) ID ile kullanıcı sorgulama");
         //kullanıcı id ile sorgulanır, bilgileri kontrol edilir.
 
-        Response response = given().accept("application/json").when().get(baseUrl+"/users/"+userId01);
+        Response response = given().accept("application/json").spec(spec01).when().get(userId01);
         Utils.checkStatus(response);
         response.prettyPrint();
         response.then().assertThat().
                 body("username", equalTo("doejj"),
                         "firstName", equalTo("jane"),
                         "lastName", equalTo("doe"));
+        Utils.report(response);
     }
     @Test
-    public void getUserWithId_Negative() {
+    public void getUserWithId_Negative() { extentTest=extentReports.createTest("(GET) ID ile kullanıcı sorgulama, Negatif (geçersiz ID)");
         //Kayıtlı olmayan bir kullanıcı id'si ile istek atılır, hata vermesi beklenir.
 
-        Response response = given().accept("application/json").when().get(baseUrl + "/users/123456-gecersiz-id-123456");
+        Response response = given().accept("application/json").spec(spec01).when().get("123456-gecersiz-id-123456");
         response.prettyPrint();
         response.then().assertThat().statusCode(404).
                 body("error.name", equalTo("mockRequestNotFoundError"),
                         "error.message", equalTo("Double check your method and the request path and try again."),
                         "error.header", equalTo("No matching requests"));
+        Utils.report(response);
     }
     @Test
-    public void postCreateUser(){
+    public void postCreateUser(){ extentTest=extentReports.createTest("(POST) Kullanıcı oluşturma");
         //Yeni kullanıcı oluşturulur.
 
         UserPojo userData = new UserPojo("test","user", "test01","Password01*" );
-        Response response =given().contentType(ContentType.JSON).body(userData).when().post(baseUrl+"/users");
+        Response response =given().contentType(ContentType.JSON).spec(spec01).body(userData).when().post();
         Utils.checkStatus(response);
-        response.prettyPrint();
+        Utils.report(response);
     }
     @Test
-    public void postCreateUser_Negative(){
+    public void postCreateUser_Negative(){ extentTest=extentReports.createTest("(POST) Kullanıcı oluşturma, Negatif (eksik alan ile)");
         //Eksik alanlar ile yeni kullanıcı oluşturma denenir, hata alması beklenir.
-
-        Map<String,String> userData = new HashMap<String, String>();
-
         //userData.put("firstname","roof");      fistname alanı RequestBody'ye eklenmedi.
         userData.put("lastname","stacks");
         userData.put("username","roofstacks123456");
         userData.put("password","roofstacks");
 
-        Response response =given().contentType(ContentType.JSON).body(userData).when().post(baseUrl+"/users");
+        Response response =given().contentType(ContentType.JSON).spec(spec01).body(userData).when().post();
         response.then().assertThat().statusCode(400);
-        response.prettyPrint();
+        Utils.report(response);
     }
     /*
         NOT : Yeni kullanıcı oluştururken Required olan firstname/lastname/username alanları olmadığında
@@ -77,50 +75,52 @@ public class Test01 extends RoofBase {
 
 
     @Test
-    public void delRemoveUser(){
+    public void delRemoveUser(){ extentTest=extentReports.createTest("(DELETE) Kullanıcı silme");
         //Var olan bir kullanıcı silinir.
 
-        Response response = given().contentType(ContentType.JSON).when().delete(baseUrl+"/users/"+userId02);
+        Response response = given().contentType(ContentType.JSON).spec(spec01).when().delete(userId02);
         Utils.checkStatus(response);
+        Utils.report(response);
     }
     @Test
-    public void delRemoveUser_Negative(){
+    public void delRemoveUser_Negative(){ extentTest=extentReports.createTest("(DELETE) Kullanıcı silme, Negatif (geçersiz ID)");
         //Var olmayan bir id ile kullanıcı silme denenir, hata alması beklenir.
 
-        Response response = given().contentType(ContentType.JSON).when().delete(baseUrl+"/users/123456-gecersiz-id-123456");
+        Response response = given().contentType(ContentType.JSON).spec(spec01).when().delete("123456-gecersiz-id-123456");
         response.prettyPrint();
         response.then().assertThat().statusCode(404).
                 body("error.name", equalTo("mockRequestNotFoundError"),
                         "error.message", equalTo("Double check your method and the request path and try again."),
                         "error.header", equalTo("No matching requests"));
+        Utils.report(response);
     }
     @Test
-    public void patchSwitchUserActivity(){
+    public void patchSwitchUserActivity(){ extentTest=extentReports.createTest("(PATCH) Kullanıcı aktiflik durumunu değiştirme");
         //Kullanıcının aktiflik durumu değiştirilir.
 
         Map<String,Object> activity = new HashMap<String, Object>();
         activity.put("isActive",false);
-        Response response = given().contentType(ContentType.JSON).when().patch(baseUrl+"/users/"+userId01+"/activity");
+        Response response = given().contentType(ContentType.JSON).spec(spec01).when().patch(userId01+"/activity");
         Utils.checkStatus(response);
-        response.prettyPrint();
+        Utils.report(response);
     }
     @Test
-    public void patchSwitchUserActivity_Negative(){
+    public void patchSwitchUserActivity_Negative(){ extentTest=extentReports.createTest("(PATCH) Kullanıcı aktiflik durumunu değiştirme, Negatif (geçersiz değer ile)");
         //Kullanıcının aktiflik durumunu geçersiz bir değerle değiştirilme denenir, hata alması beklenir.
 
         Map<String,Object> activity = new HashMap<String, Object>();
         activity.put("isActive","false"); // String olarak gönderildi.
-        Response response = given().contentType(ContentType.JSON).when().patch(baseUrl+"/users/"+userId01+"/activity");
+        Response response = given().contentType(ContentType.JSON).spec(spec01).when().patch(userId01+"/activity");
         response.then().assertThat().statusCode(400);
-        response.prettyPrint();
+        Utils.report(response);
     }
     @Test
-    public void putUpdateUser(){
+    public void putUpdateUser(){ extentTest=extentReports.createTest("(PUT) Kullanıcı bilgilerini güncelleme");
         //Var olan bir kullanıcının bilgileri değiştirilir
 
         UpdateUserPojo userData = new UpdateUserPojo("roof", "stacks");
-        Response response = given().contentType(ContentType.JSON).body(userData).when().put(baseUrl+"/users/"+userId01);
+        Response response = given().contentType(ContentType.JSON).spec(spec01).body(userData).when().put(userId01);
         Utils.checkStatus(response);
-        response.prettyPrint();
+        Utils.report(response);
     }
 }

@@ -19,6 +19,9 @@ public class UpdateUserPojo {
 
     @Override
     public String toString() {
-        return "UpdateUserPojo{" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + '}';
+        return "UpdateUserPojo{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 }

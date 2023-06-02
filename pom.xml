@@ -56,6 +56,17 @@
       <artifactId>jackson-mapper-asl</artifactId>
       <version>1.9.13</version>
     </dependency>
-
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.14.3</version>
+      <scope>compile</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>4.0.9</version>
+    </dependency>
   </dependencies>
 </project>

@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc512be6-7be4-4bb3-a426-adb83273f7f8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pojos/UpdateUserPojo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/Test01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testNG.xml" afterDir="false" />
+    <list default="true" id="dc512be6-7be4-4bb3-a426-adb83273f7f8" name="Changes" comment="pozitif ve negatif testler yazıldı.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/testBase/TestBaseReport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pojos/UpdateUserPojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojos/UpdateUserPojo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pojos/UserPojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojos/UserPojo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testBase/RoofBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testBase/RoofBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testBase/RoofBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/Test01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/Test01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testNG.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,19 +41,20 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/oTura/IdeaProjects/RoofStacks_Case&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/oTura/IdeaProjects/RoofStacks_Case",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
-}</component>
-  <component name="RunManager" selected="TestNG.C:/Users/oTura/IdeaProjects/RoofStacks_Case/testNG.xml">
+}]]></component>
+  <component name="RunManager" selected="TestNG.Test01">
     <configuration name="C:/Users/oTura/IdeaProjects/RoofStacks_Case/testNG.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="RoofStacks_Case" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testNG.xml" />
@@ -65,7 +65,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test01.delRemoveUser_Negative" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Test01" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="RoofStacks_Case" />
       <extension name="coverage">
         <pattern>
@@ -75,7 +75,24 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.Test01" />
-      <option name="METHOD_NAME" value="delRemoveUser_Negative" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test01.getUserList" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="RoofStacks_Case" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.Test01" />
+      <option name="METHOD_NAME" value="getUserList" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -83,7 +100,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test01.getUserWithId_Negative" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Test01.getUserWithId" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="RoofStacks_Case" />
       <extension name="coverage">
         <pattern>
@@ -93,7 +110,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.Test01" />
-      <option name="METHOD_NAME" value="getUserWithId_Negative" />
+      <option name="METHOD_NAME" value="getUserWithId" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -119,31 +136,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test01.postCreateUser_Negative" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="RoofStacks_Case" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.Test01" />
-      <option name="METHOD_NAME" value="postCreateUser_Negative" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Test01" />
+        <item itemvalue="TestNG.Test01.getUserWithId" />
+        <item itemvalue="TestNG.Test01.getUserList" />
         <item itemvalue="TestNG.C:/Users/oTura/IdeaProjects/RoofStacks_Case/testNG.xml" />
         <item itemvalue="TestNG.Test01.patchSwitchUserActivity" />
-        <item itemvalue="TestNG.Test01.delRemoveUser_Negative" />
-        <item itemvalue="TestNG.Test01.postCreateUser_Negative" />
-        <item itemvalue="TestNG.Test01.getUserWithId_Negative" />
       </list>
     </recent_temporary>
   </component>
@@ -156,6 +155,14 @@
       <option name="presentableId" value="Default" />
       <updated>1685646913739</updated>
     </task>
+    <task id="LOCAL-00001" summary="pozitif ve negatif testler yazıldı.">
+      <created>1685704387044</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685704387044</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,5 +175,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="pozitif ve negatif testler yazıldı." />
+    <option name="LAST_COMMIT_MESSAGE" value="pozitif ve negatif testler yazıldı." />
   </component>
 </project>
