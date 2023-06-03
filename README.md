@@ -29,6 +29,7 @@ Since this is a Mock API, Endpoints give fixed responses,
 so some requests do not receive the expected response.
 here the tests were written assuming that the expected answers obtained.
 
-NOTE 2 : [These](src/test/report/) reports can be opened in a browser to view them visually. 
+NOTE 2 : [These](src/test/report/) reports can be opened in a browser to view them visually
+if downloaded. 
 This way graph of tests, failed tests can be displayed.
-(Right click on that report -> Open in -> Browser -> choice of a browser)
+
