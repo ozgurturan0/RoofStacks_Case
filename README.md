@@ -13,7 +13,7 @@ This is a project for testing RESTful APIs using RestAssured framework.
 The project structure is organized as follows:
 
 - [Tests](src/test/java/tests): Contains the test classes.
-- [Reports](src/test/report): Contains generated test reports, These reports .
+- [Reports](src/test/report): Contains generated test reports.
 - [POM](pom.xml): Maven project configuration file.
 - [pojos](src/main/java/pojos): The package where the JSON models are kept.
 - [TestBase](src/main/java/testBase/TestBase.java): Where variables and reporting methods reside.
