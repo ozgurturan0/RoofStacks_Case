@@ -6,10 +6,6 @@ import testBase.TestBase;
 import static io.restassured.RestAssured.given;
 
 public class Utils extends TestBase {
-    public static Response get(String url){
-        return given().accept("application/json").when().get(url);
-    }
-
     public static void checkStatus(Response response){
         System.out.println("\n\nStatus Code : "+response.getStatusCode());
         response.then().assertThat().statusCode(200).contentType(ContentType.JSON);
