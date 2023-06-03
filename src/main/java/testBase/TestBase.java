@@ -15,7 +15,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TestBaseReport {
+public class TestBase {
     protected RequestSpecification spec01;
     protected String baseUrl = "https://3e3d2990-3fca-4144-8b26-1538cf135a09.mock.pstmn.io";
     protected String userId01 = "c4f6c088-f91b-494e-b7f0-a08f48df3180";
@@ -31,7 +31,7 @@ public class TestBaseReport {
         extentReports = new ExtentReports();
 
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-        String filePath = System.getProperty("user.dir") + "/target/Report/Report"+date+".html";
+        String filePath = System.getProperty("user.dir") + "/src/test/report/Report"+date+".html";
         extentHtmlReporter = new ExtentHtmlReporter(filePath);
         extentReports.attachReporter(extentHtmlReporter);
         extentReports.setSystemInfo("Environment","QA");
