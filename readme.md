@@ -9,7 +9,7 @@
 - npm v8.19.4
 - MongoDB Atlas or local MongoDB
 - Chrome browser + matching ChromeDriver
-- 
+  
 
 ---
 
