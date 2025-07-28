@@ -1,8 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="1" name="RoofStacks case examples" parallel="tests">
     <test name="All">
-        <packages>
-            <package name="tests.*"/>
-        </packages>
+        <classes>
+            <class name="tests.UI.Test01"/>
+            <class name="tests.UI.Test02"/>
+        </classes>
     </test>
 </suite>

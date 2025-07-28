@@ -1,13 +1,19 @@
-# Roof Stacks Case Study
+# REM Waste Case Study
 
-This is a project for testing RESTful APIs using RestAssured framework.
+This is a project for testing UI and RESTful APIs using Selenium and RestAssured framework.
 
 ## Libraries
 - Java version 1.8
 - RestAssured
 - TestNG
+- Selenium
 - Jackson Mapper
 - Extent Reports
+- Node.js version 16.20.2
+- Npm version 8.19.4
+
+## Instructions
+- project repository : https://github.com/ozgurturan0/devconnector_2.0.git
 
 ## Project Structure
 The project structure is organized as follows:
